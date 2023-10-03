@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+    content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTrack</title>
+    <link rel="stylesheet" href="script.css">
+</head>
+<body>
+  
+    <header class="header">
+        <a href="#" class="logo"><ion-icon name="bookmarks"></ion-icon>EduTrack</a>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Content</a>
+            <a href="#">Reviews</a>
+        </nav>
+    </header>
+
+    <section class="home">
+        <div class="content">
+            <h2>EduTrack : </h2>
+            <!-- <p>Empowering Seamless Learning Through Course Tracking and Syllabus Completion !</p> -->
+        </div>
+        <div class="wrapper-login">
+
+          <div>
+            
+              <style>
+                @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+.container{
+    /* min-height:100vh; */
+    /* background-color:#341889; */
+    display: flexbox;
+    justify-content:center;
+    align-items:center;
+}
+.card{
+    height:100px; 
+    width:320px;
+    background-color:#fff;
+    border-radius:10px;
+    font-family: 'Poppins', sans-serif;
+    padding:0 20px;
+    position:relative;
+    overflow:hidden;
+    transition:all 0.5s;
+}
+.heighten{
+    height:400px;
+}
+.card::before{
+    content:'';
+    position:absolute;
+    height:20px;
+    width:100%;
+    background-color:#38383b;
+    left:0;
+}
+.top{
+    margin-top:30px;
+    display:flex;
+    justify-content:space-between;
+}
+.top h3{
+    color:#51575e;
+}
+.top span{
+    height:25px;
+    width:25px;
+    border:1px solid #8f9ca5;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+}
+.checked_tick{
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+.checked_tick .fa-check{
+    color:#2ad05d
+}
+.fa-angle-down{
+    margin-top:2px;
+    font-size:20px;
+}
+.fa-angle-up{
+     
+    font-size:20px;
+}
+
+.progress-bar{
+    list-style:none;
+    display:flex;
+    width:100%;
+}
+.progress-bar li{
+    position:relative;
+       width:300px;
+       
+}
+.progress-bar li::after{
+    margin-top:10px;
+    content:'';
+    position:absolute;
+    height:4px;
+    width:60px;
+    background-color:#d5d9df;
+    transition:all 1s;
+}
+.progress-bar li.active::after{
+    position:absolute;
+    top:69px;
+    background-color:rgb(0, 31, 88);
+    height:4px;
+    z-index:2;
+    
+}
+.list{
+     margin-top:50px;
+    list-style:none;
+      position:relative;
+}
+.list_item_1{
+
+    display:flex;
+    margin-top:10px;
+    border-bottom:1px solid #261a38;
+    padding-bottom:10px;
+}
+.list_item_1 strike{
+    font-size:15px;
+    font-weight:700;
+    margin-top:2px;
+}
+
+.list_item_1 span{
+    height:25px;
+    width:25px;
+    /* border:1px solid #c1ccd3; */
+    border-radius:7px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#000;
+    margin-right:6px;
+    cursor:pointer;
+    transition:all 0.5s;
+}
+
+span.list_checked{
+    
+    background-color:#2ad05d;
+}
+.list_item_1 span i{
+        color:#000;
+}
+
+.d-none{
+    display:none;
+} 
+strike.strike_none{
+    text-decoration:none;
+}
+              </style>
+              <div class="container">
+                <div class="card">
+                    <div class="top">
+                        <h3>Module 1</h3>
+                        <div class="checked_tick">
+                             <i id="checked_toggle" class="fa fa-check d-none"></i>
+                             <span><i class="fa fa-angle-down"></i></span>
+                        </div>
+                    </div>
+                    <ul class="progress-bar">
+                        <li></li>
+                        <li></li>
+                        <li></li> 
+                        <li></li> 
+                        <li></li>
+                    </ul>
+                    <ul class="list">
+                        <li id="1" class="list_item_1">
+                                <span id="check1" onclick="checked(1)"><i class="fa fa-check"></i></span>
+                                <strike id="strike1" class="strike_none">topic 1</strike>
+                        </li>
+                        <li id="2" class="list_item_1">
+                                <span id="check2" onclick="checked(2)"><i class="fa fa-check"></i></span>
+                                <strike id="strike2" class="strike_none">topic 2,...</strike>
+                        </li>
+                        <li id="3" class="list_item_1">
+                                <span id="check3" onclick="checked(3)"><i class="fa fa-check"></i></span>
+                                <strike id="strike3" class="strike_none">topic 3</strike>
+                        </li>
+                        <li id="4" class="list_item_1">
+                                <span id="check4" onclick="checked(4)"><i class="fa fa-check"></i></span>
+                                <strike id="strike4" class="strike_none">topic 4</strike>
+                        </li>
+                        <li id="5" class="list_item_1">
+                                <span id="check5" onclick="checked(5)"><i class="fa fa-check"></i></span>
+                                <strike id="strike5" class="strike_none">topic 5</strike>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- <div class="container 1">
+              <div class="card">
+                  <div class="top">
+                      <h3>Module 2</h3>
+                      <div class="checked_tick">
+                           <i id="checked_toggle" class="fa fa-check d-none"></i>
+                           <span><i class="fa fa-angle-down"></i></span>
+                      </div>
+                  </div>
+                  <ul class="progress-bar">
+                      <li></li>
+                      <li></li>
+                      <li></li> 
+                      <li></li> 
+                      <li></li>
+                  </ul>
+                  <ul class="list">
+                      <li id="1" class="list_item_1">
+                              <span id="check1" onclick="checked(1)"><i class="fa fa-check"></i></span>
+                              <strike id="strike1" class="strike_none">topic 1</strike>
+                      </li>
+                      <li id="2" class="list_item_1">
+                              <span id="check2" onclick="checked(2)"><i class="fa fa-check"></i></span>
+                              <strike id="strike2" class="strike_none">topic 2,...</strike>
+                      </li>
+                      <li id="3" class="list_item_1">
+                              <span id="check3" onclick="checked(3)"><i class="fa fa-check"></i></span>
+                              <strike id="strike3" class="strike_none">topic 3</strike>
+                      </li>
+                      <li id="4" class="list_item_1">
+                              <span id="check4" onclick="checked(4)"><i class="fa fa-check"></i></span>
+                              <strike id="strike4" class="strike_none">topic 4</strike>
+                      </li>
+                      <li id="5" class="list_item_1">
+                              <span id="check5" onclick="checked(5)"><i class="fa fa-check"></i></span>
+                              <strike id="strike5" class="strike_none">topic 5</strike>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <div class="container 1">
+            <div class="card">
+                <div class="top">
+                    <h3>Module 3</h3>
+                    <div class="checked_tick">
+                         <i id="checked_toggle" class="fa fa-check d-none"></i>
+                         <span><i class="fa fa-angle-down"></i></span>
+                    </div>
+                </div>
+                <ul class="progress-bar">
+                    <li></li>
+                    <li></li>
+                    <li></li> 
+                    <li></li> 
+                    <li></li>
+                </ul>
+                <ul class="list">
+                    <li id="1" class="list_item_1">
+                            <span id="check1" onclick="checked(1)"><i class="fa fa-check"></i></span>
+                            <strike id="strike1" class="strike_none">topic 1</strike>
+                    </li>
+                    <li id="2" class="list_item_1">
+                            <span id="check2" onclick="checked(2)"><i class="fa fa-check"></i></span>
+                            <strike id="strike2" class="strike_none">topic 2,...</strike>
+                    </li>
+                    <li id="3" class="list_item_1">
+                            <span id="check3" onclick="checked(3)"><i class="fa fa-check"></i></span>
+                            <strike id="strike3" class="strike_none">topic 3</strike>
+                    </li>
+                    <li id="4" class="list_item_1">
+                            <span id="check4" onclick="checked(4)"><i class="fa fa-check"></i></span>
+                            <strike id="strike4" class="strike_none">topic 4</strike>
+                    </li>
+                    <li id="5" class="list_item_1">
+                            <span id="check5" onclick="checked(5)"><i class="fa fa-check"></i></span>
+                            <strike id="strike5" class="strike_none">topic 5</strike>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container 1">
+          <div class="card">
+              <div class="top">
+                  <h3>Module 4</h3>
+                  <div class="checked_tick">
+                       <i id="checked_toggle" class="fa fa-check d-none"></i>
+                       <span><i class="fa fa-angle-down"></i></span>
+                  </div>
+              </div>
+              <ul class="progress-bar">
+                  <li></li>
+                  <li></li>
+                  <li></li> 
+                  <li></li> 
+                  <li></li>
+              </ul>
+              <ul class="list">
+                  <li id="1" class="list_item_1">
+                          <span id="check1" onclick="checked(1)"><i class="fa fa-check"></i></span>
+                          <strike id="strike1" class="strike_none">topic 1</strike>
+                  </li>
+                  <li id="2" class="list_item_1">
+                          <span id="check2" onclick="checked(2)"><i class="fa fa-check"></i></span>
+                          <strike id="strike2" class="strike_none">topic 2,...</strike>
+                  </li>
+                  <li id="3" class="list_item_1">
+                          <span id="check3" onclick="checked(3)"><i class="fa fa-check"></i></span>
+                          <strike id="strike3" class="strike_none">topic 3</strike>
+                  </li>
+                  <li id="4" class="list_item_1">
+                          <span id="check4" onclick="checked(4)"><i class="fa fa-check"></i></span>
+                          <strike id="strike4" class="strike_none">topic 4</strike>
+                  </li>
+                  <li id="5" class="list_item_1">
+                          <span id="check5" onclick="checked(5)"><i class="fa fa-check"></i></span>
+                          <strike id="strike5" class="strike_none">topic 5</strike>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <div class="container 1">
+        <div class="card">
+            <div class="top">
+                <h3>Module 5</h3>
+                <div class="checked_tick">
+                     <i id="checked_toggle" class="fa fa-check d-none"></i>
+                     <span><i class="fa fa-angle-down"></i></span>
+                </div>
+            </div>
+            <ul class="progress-bar">
+                <li></li>
+                <li></li>
+                <li></li> 
+                <li></li> 
+                <li></li>
+            </ul>
+            <ul class="list">
+                <li id="1" class="list_item_1">
+                        <span id="check1" onclick="checked(1)"><i class="fa fa-check"></i></span>
+                        <strike id="strike1" class="strike_none">topic 1</strike>
+                </li>
+                <li id="2" class="list_item_1">
+                        <span id="check2" onclick="checked(2)"><i class="fa fa-check"></i></span>
+                        <strike id="strike2" class="strike_none">topic 2,...</strike>
+                </li>
+                <li id="3" class="list_item_1">
+                        <span id="check3" onclick="checked(3)"><i class="fa fa-check"></i></span>
+                        <strike id="strike3" class="strike_none">topic 3</strike>
+                </li>
+                <li id="4" class="list_item_1">
+                        <span id="check4" onclick="checked(4)"><i class="fa fa-check"></i></span>
+                        <strike id="strike4" class="strike_none">topic 4</strike>
+                </li>
+                <li id="5" class="list_item_1">
+                        <span id="check5" onclick="checked(5)"><i class="fa fa-check"></i></span>
+                        <strike id="strike5" class="strike_none">topic 5</strike>
+                </li>
+            </ul>
+        </div>
+    </div> -->
+            <!-- <h2>User Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required id="username">
+                    <label>Enter Your Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required id="password">
+                    <label>Enter Your Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember Me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn" onclick="auth()">Login</button>
+                <div class="register-link">
+                    <p>Not a Member? <a href="#">Sign Up Now</a></p>
+                </div> -->
+            </form>
+            <!-- <script>
+                function auth() {
+                    var email=document.getElementById('username').value;
+                    var password=document.getElementById('password').value;
+
+                    if(email=="admin@gmail.com" && password=='admin@1234') {
+                        alert("Logged into Admin");
+                        window.location.assign("page2.html");
+                    }  
+                    else if (email=="teacher@gmail.com" && password=='teacher@1234') {
+                        alert("Logged into Teacher");
+                        window.location.assign("page3.html");
+                    }
+                    else if (email=="student@gmail.com" && password=='student@1234') {
+                        alert("Logged into Student");
+                        window.location.assign("pg4.html")
+                    } 
+
+                    else {
+                        alert("Invalid Login ID / Password");
+                        return;
+                    }
+
+                }
+            </script> -->
+        </div>
+    </section>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- <link rel="stylesheet" href="scriptdemo.js"> -->
+    <script>
+      var click_down=document.querySelector(".top span");
+                var card=document.querySelector(".card");
+                var up=document.querySelector(".top span i");
+                click_down.addEventListener('click',function(){
+                    card.classList.toggle('heighten');
+                    if(up.classList.contains("fa-angle-down")){  
+                     up.classList.remove('fa-angle-down');
+                     up.classList.add('fa-angle-up');
+                    } 
+                    else{
+                            up.classList.add('fa-angle-down');
+                     up.classList.remove('fa-angle-up'); 
+                    }
+                    
+                }); 
+                 
+                
+                var progress_bar = document.querySelectorAll(".progress-bar li");
+                function checked(id){ 
+                       var checked = document.getElementById("check"+id);
+                       checked.classList.toggle("list_checked");
+                          var striked = document.getElementById("strike"+id);
+                       striked.classList.toggle("strike_none");
+                        var list_childs = document.getElementById(id);
+                       list_childs.classList.toggle("list_active");
+                       progress(); 
+                }  
+                function progress(){
+                      var checked_progress=document.querySelectorAll(".list li.list_active");
+                      var length = checked_progress.length;
+                       progress_bar.forEach(function(index){
+                           index.classList.remove("active");
+                       });
+                   
+                      for(i=0;i<length;i++){
+                          progress_bar[i].classList.add("active");
+                      } 
+                      
+                      var checked_tick = document.querySelector("#checked_toggle");
+                      if(length >4){
+                          
+                          checked_tick.classList.remove("d-none");
+                      }else{
+                          checked_tick.classList.add("d-none");
+                      }
+                       
+                }
+    </script>
+    
+</body>
+</html>
