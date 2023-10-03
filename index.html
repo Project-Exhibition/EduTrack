@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+    content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTrack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo"><ion-icon name="bookmarks"></ion-icon>EduTrack</a>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Content</a>
+            <a href="#">Reviews</a>
+        </nav>
+    </header>
+
+    <section class="home">
+        <div class="content">
+            <h2>EduTrack : </h2>
+            <p>Empowering Seamless Learning Through Course Tracking and Syllabus Completion !</p>
+        </div>
+        <div class="wrapper-login">
+            <h2>User Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required id="username">
+                    <label>Enter Your Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required id="password">
+                    <label>Enter Your Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember Me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn" onclick="return auth()">Login</button>
+                <div class="register-link">
+                    <p>Not a Member? <a href="#">Sign Up Now</a></p>
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        function auth() {
+            var email=document.getElementById('username').value;
+            var password=document.getElementById('password').value;
+    
+            if(email=="admin@gmail.com" && password=='admin@1234') {
+                alert("Logged into Admin");
+                window.location.assign("page2.html");
+                return false;
+            }  
+            else if (email=="teacher@gmail.com" && password=='teacher@1234') {
+                alert("Logged into Teacher");
+                window.location.assign("page3.html");
+                return false;
+            }
+            else if (email=="student@gmail.com" && password=='student@1234') {
+                alert("Logged into Student");
+                window.location = "X 007.html";
+                return false;
+            } 
+    
+            else {
+                alert("Invalid Login ID / Password");
+                return;
+            }
+    
+        }
+    </script>
+</body>
+
+</html>
