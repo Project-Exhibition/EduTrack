@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+    content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTrack</title>
+    <!-- <link rel="stylesheet" href="script.css"> -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+
+}
+
+.header .logo {
+    font-size: 1.7em;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: .5s;
+}
+
+.nav a:hover::after {
+    transform: scaleX(1);
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url("images/toolbox.jpg")no-repeat;
+    background-size: cover;
+    background-position: center;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    padding: 80px 100px 0;
+
+}
+
+
+.home .content {
+    max-width: 600px;
+    color: #fff;
+}
+
+.content h2 {
+    font-size: 3em;
+    letter-spacing: 0.03em;
+}
+
+
+.home .wrapper-login {
+    position: relative;
+    width: 440px;
+
+}
+
+.wrapper-login h2 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+
+}
+
+.wrapper-login .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;   
+    margin: 40px 0;
+
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 1px solid #fff ; 
+    outline: none;
+    border-radius: 40px; 
+    font-size: 1em;
+    color: #fff;
+    padding-left: 45px;
+
+
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 45px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #fff;
+    pointer-events: none;
+
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    font-size: 0.8em;
+    top: -14px;
+    left: 17px;
+    transition: .5s;
+}
+
+
+
+
+
+.input-box .icon {
+    position: absolute;
+    top: 14px;
+    left: 15px;
+    font-size: 1.2em;
+    color: #fff;
+
+}
+
+
+.wrapper-login .remember-forgot {
+    font-size: .9em;
+    color: #fff;
+    font-weight: 500;
+    margin: -25px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.remember-forgot label input {
+    accent-color: #1e0b04;
+    margin-right: 5px;
+}
+
+
+
+
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+
+.wrapper-login .btn {
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    background: linear-gradient(90deg, white, grey);
+    cursor: pointer;
+    font-size: 1em;
+    color: black;
+    font-weight: 1000;
+
+}
+
+
+.wrapper-login .register-link {
+    font-size: .9em;
+    color: white;
+    text-align: center;
+    margin: 20px;
+    justify-content: space-between;
+
+}
+
+.register-link p a {
+    color: white;
+    text-decoration: none;
+}
+
+.register-link p a:hover {
+    font-weight: 600;
+}
+.subjects a h1{
+    font-family: sans-serif;
+    text-decoration: none;
+    color: white;
+    font-size: 80px;
+}
+.subjects{
+    float:right;
+}
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"><ion-icon name="bookmarks"></ion-icon>EduTrack</a>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Content</a>
+            <a href="#">Reviews</a>
+        </nav>
+    </header>
+
+    <section class="home">
+        <div class="content">
+            <h2>EduTrack : </h2>
+            
+            <!-- <p>Empowering Seamless Learning Through Course Tracking and Syllabus Completion !</p> -->
+        </div>
+        <div class="subjects" style="text-decoration: none;">
+            <a href="#"><h1>Subject 1</h1></a>
+            <a href="#"><h1>Subject 2</h1></a>
+            <a href="#"><h1>Subject 3</h1></a>
+            <a href="#"><h1>Subject 4</h1></a>
+            </div>
+        <!-- <div class="wrapper-login">
+            <h2>User Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required id="username">
+                    <label>Enter Your Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required id="password">
+                    <label>Enter Your Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember Me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn" onclick="auth()">Login</button>
+                <div class="register-link">
+                    <p>Not a Member? <a href="#">Sign Up Now</a></p>
+                </div>
+            </form>
+            <script>
+                function auth() {
+                    var email=document.getElementById('username').value;
+                    var password=document.getElementById('password').value;
+
+                    if(email=="admin@gmail.com" && password=='admin@1234') {
+                        alert("Logged into Admin");
+                        window.location.assign("page2.html");
+                    }  
+                    else if (email=="teacher@gmail.com" && password=='teacher@1234') {
+                        alert("Logged into Teacher");
+                        window.location.assign("page3.html");
+                    }
+                    else if (email=="student@gmail.com" && password=='student@1234') {
+                        alert("Logged into Student");
+                        window.location.assign("pg4.html")
+                    } 
+
+                    else {
+                        alert("Invalid Login ID / Password");
+                        return;
+                    }
+
+                }
+            </script>
+        </div> -->
+    </section>
+
+    <!-- <div class="grid">
+        <a href="#"><h1>subject 1</h1></a>
+        <a href="#"><h1>subject 2</h1></a>
+        <a href="#"><h1>subject 3</h1></a>
+        <a href="#"><h1>subject 4</h1></a>
+    </div> -->
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
