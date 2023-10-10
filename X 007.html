@@ -429,21 +429,36 @@ strike.strike_none{
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <!-- <link rel="stylesheet" href="scriptdemo.js"> -->
     <script>
-      var click_down=document.querySelector(".top span");
-                var card=document.querySelector(".card");
-                var up=document.querySelector(".top span i");
-                click_down.addEventListener('click',function(){
-                    card.classList.toggle('heighten');
-                    if(up.classList.contains("fa-angle-down")){  
-                     up.classList.remove('fa-angle-down');
-                     up.classList.add('fa-angle-up');
-                    } 
-                    else{
-                            up.classList.add('fa-angle-down');
-                     up.classList.remove('fa-angle-up'); 
-                    }
+      // var click_down=document.querySelector(".top span");
+      //           var card=document.querySelector(".card");
+      //           var up=document.querySelector(".top span i");
+      //           click_down.addEventListener('click',function(){
+      //               card.classList.toggle('heighten');
+      //               if(up.classList.contains("fa-angle-down")){  
+      //                up.classList.remove('fa-angle-down');
+      //                up.classList.add('fa-angle-up');
+      //               } 
+      //               else{
+      //                       up.classList.add('fa-angle-down');
+      //                up.classList.remove('fa-angle-up'); 
+      //               }
                     
-                }); 
+      //           }); 
+
+         // Function to toggle the module content
+        function toggleModuleContent(event) {
+            const card = event.target.closest('.card');
+            const progress = card.querySelector('.progress-bar');
+            const list = card.querySelector('.list');
+
+            progress.classList.toggle('d-none');
+            list.classList.toggle('d-none');
+        }
+
+    // Attach click event listeners to all dropdown buttons
+        const dropdownButtons = document.querySelectorAll('.top span');
+        dropdownButtons.forEach(button => {
+            button.addEventListener('click', toggleModuleContent);
                  
                 
                 var progress_bar = document.querySelectorAll(".progress-bar li");

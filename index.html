@@ -39,12 +39,12 @@
                     <label>Enter Your Password</label>
                 </div>
                 <div class="remember-forgot">
-                    <label><input type="checkbox">Remember Me</label>
+<!--                     <label><input type="checkbox">Remember Me</label> maybe add it later when it can actually be added-->
                     <a href="#">Forgot Password?</a>
                 </div>
                 <button type="submit" class="btn" onclick="return auth()">Login</button>
                 <div class="register-link">
-                    <p>Not a Member? <a href="#">Sign Up Now</a></p>
+                    <p>Unable to log-in? <a href="#">Contact the Admin Now!</a></p>
                 </div>
             </form>
 
@@ -66,7 +66,7 @@
             }  
             else if (email=="teacher@gmail.com" && password=='teacher@1234') {
                 alert("Logged into Teacher");
-                window.location.assign("page3.html");
+                window.location.assign("page2.html");
                 return false;
             }
             else if (email=="student@gmail.com" && password=='student@1234') {
