@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduTracker</title>
+    <title>EduTrack</title>
     <link rel="stylesheet" href="script.css">
 </head>
 <body>
     <header class="header">
-        <a href="#" class="logo"><ion-icon name="bookmarks"></ion-icon>EduTracker</a>
+        <a href="#" class="logo"><ion-icon name="bookmarks"></ion-icon>EduTrack</a>
         <nav class="nav">
             <a href="#">Home</a>
             <a href="#">About</a>
@@ -18,7 +18,7 @@
         </nav>
     </header>
     <section class="home">
-        <div class="wrapper-login">
+     <div class="wrapper-login">
 
           <div>
             
@@ -387,36 +387,38 @@ strike.strike_none{
             button.addEventListener('click', toggleModuleContent);
         });
 
-        // Define checked function
+        // Function to toggle checked items
         function checked(id) {
-            var checked = document.getElementById("check" + id);
-            checked.classList.toggle("list_checked");
-            var striked = document.getElementById("strike" + id);
-            striked.classList.toggle("strike_none");
-            progress();
+            const checked = document.getElementById(`check${id}`);
+            checked.classList.toggle('list_checked');
+            const striked = document.getElementById(`strike${id}`);
+            striked.classList.toggle('strike_none');
+            updateProgressBars();
         }
 
-        // Define progress function
-        function progress() {
-            var checked_progress = document.querySelectorAll(".list_item_1.list_checked");
-            var length = checked_progress.length;
-
-            // Update the progress bar
-            var progressBars = document.querySelectorAll(".progress-bar li");
+        // Function to update progress bars
+        function updateProgressBars() {
+            const progressBars = document.querySelectorAll('.progress-bar li');
+            let completedCount = 0;
             progressBars.forEach((bar, index) => {
-                if (index < length) {
-                    bar.classList.add("active");
-                } else {
-                    bar.classList.remove("active");
+                if (document.getElementById(`check${index + 1}`).classList.contains('list_checked')) {
+                    completedCount++;
                 }
             });
 
-            // Show/hide the checked_tick icon
-            var checkedTick = document.querySelector(".checked_tick .fa-check");
-            if (length > 4) {
-                checkedTick.classList.remove("d-none");
+            progressBars.forEach((bar, index) => {
+                if (index < completedCount) {
+                    bar.classList.add('active');
+                } else {
+                    bar.classList.remove('active');
+                }
+            });
+
+            const checkedTick = document.querySelector('.checked_tick .fa-check');
+            if (completedCount > 4) {
+                checkedTick.classList.remove('d-none');
             } else {
-                checkedTick.classList.add("d-none");
+                checkedTick.classList.add('d-none');
             }
         }
     </script>
